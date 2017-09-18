@@ -6,8 +6,7 @@ var bodyParser = require("body-parser"),
     app = express();
 
 // App config   
-console.log(process.env.DATABASEURL);
-mongoose.connect("mongodb://localhost/blog_app");
+mongoose.connect(process.env.DATABASEURL);
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(override("_method"));
